@@ -1,0 +1,32 @@
+<!--pages/user/login.wxml-->
+<view class="container">
+  <view class="page-body">
+    <view class="head">
+      <image class="logo" src="../../images/logo.png"></image>
+      <view>
+        <text class="app-name">家庭记账系统</text>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" type="number" maxlength="11" auto-focus bindinput="inputTel" placeholder="请输入手机号"/>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" password type="text" bindinput="inputPassword" placeholder="请输入密码" />
+      </view>
+    </view>
+    <view>
+      <button class="login-btn" disabled="{{disable}}" bindtap="handleLogin">登录</button>
+    </view>
+    <view class='login-bot'>
+      <navigator hover-class="none" url='./../forget/forgetPassword'>
+        <text>忘记密码</text>
+      </navigator>
+      <navigator hover-class="none" url='./../register/register'>
+        <text>新用户注册</text>
+      </navigator>
+    </view>
+  </view>
+</view>

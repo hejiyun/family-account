@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<view class="container">
+   主页内容
+   <text bind:tap="Tologin">点击跳转登录页</text>
+</view>

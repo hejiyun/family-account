@@ -1,0 +1,41 @@
+/* pages/user/login.wxss */
+.weui-cells {
+  margin-bottom: 20px;
+}
+.login-btn {
+  width: 100% !important;
+  background-color:#B22222;
+  color: white;
+}
+.login-btn[disabled] {
+  background-color: rgba(235, 77, 69, 0.3) !important;
+  color: #fff !important;
+}
+.login-bot {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.login-bot text{
+  display: inline-block;
+  padding-bottom: 20px;
+}
+.head {
+  text-align: center;
+  padding-bottom: 20px;
+}
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-top: 20px;
+}
+.app-name {
+  font-size: 16px;
+  font-weight: normal;
+}
+.page-body {
+  width: 100%;
+}
