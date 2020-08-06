@@ -1,0 +1,16 @@
+<!--pages/about/about.wxml-->
+<view class="container">
+  <view class="page-body">
+    <view class="head">
+      <image class="logo" src="../../images/logo.png"></image>
+      <view>
+        <text class="app-name">家庭记账系统</text>
+        <view style="font-size:12px">版本号: v1.0.1</view>
+      </view>
+    </view>
+    <view>
+    关于,,, 叨叨唠唠
+    </view>
+  </view>
+</view>
+

@@ -35,7 +35,11 @@
         </view>
 		  </view>
       <view class="content-box">
-        <view>日期: 2019-05-12</view>
+        <view>日期: <picker  style="width:80%; display:inline-block; color:red" mode="date"  start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange">
+                  <view class="picker">
+                     {{data}}
+                  </view>
+               </picker></view>
         <view><text>备注: </text><input style="width:80%; display:inline-block"></input> </view>
         <view>支出费用: 20</view>
         <button class="login-btn" bindtap="handleConfirm">保存</button>

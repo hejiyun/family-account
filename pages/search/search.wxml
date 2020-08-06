@@ -1,2 +1,46 @@
 <!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<view class="container">
+   <view class="page-body">
+      <view class="head">
+        <view class='search'>
+        <view class='search-inner'>
+            <image class='search-icon' src='../../images/search.svg'></image>
+            <input class='search-input' placeholder='请输入备注' value='{{searchInput}}' confirm-type='search'
+                   bindconfirm='handleSearch' bindinput='watchSearchInput'></input>
+            <block wx:if='{{searchInput}}'>
+                <image class='search-icon' src='./../../images/close.svg' bindtap='handleDel'></image>
+            </block>
+        </view>
+    </view>
+      </view>
+      <scroll-view scroll-y="true" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+            <view id="{{item}}" class="scroll-view-item" wx:for="{{contentList}}" wx:key="item">
+            <view>{{item.Date + " " + item.weekDate}}<text style="float:right">支出:{{item.pay}}$ 收入:{{item.receive}}$</text></view>
+            <view wx:if="{{item.list.length !== 0}}" class="list-box">
+               <view data-id="{{listItem.id}}" wx:for="{{item.list}}"  wx:key="listItem" wx:for-item="listItem"  class="border weui-flex" bind:tap="listTab" bind:longpress="longTab">
+                  <image class="list-image weui-flex__item" src="../../images/order1.png"></image>
+                  <view class="weui-flex__item">
+                     <text>{{listItem.type}}</text>
+                     <view>{{listItem.remark}}</view>
+                  </view>
+                  <view class="weui-flex__item text-right  list-{{listItem.pay ? 'green': 'red'}}">{{(listItem.pay ? "-" + listItem.pay : "+" + listItem.receive )}}$</view>
+               </view>
+            </view>
+            <view wx:else class="list-box">
+               <text>暂无数据</text>
+            </view>
+        </view>
+      </scroll-view>
+      <view class="fadeIn" wx:if="{{iosDialog1}}">
+        <view class="weui-mask"></view>
+        <view class="weui-dialog">
+            <view class="weui-dialog__hd"><strong class="weui-dialog__title">警告</strong></view>
+            <view class="weui-dialog__bd">您确定要删除么?</view>
+            <view class="weui-dialog__ft">
+                <a class="weui-dialog__btn weui-dialog__btn_default" bindtap="close">取消</a>
+                <a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="close">确认</a>
+            </view>
+        </view>
+      </view>
+ </view>
+</view>

@@ -8,7 +8,11 @@
     "pages/setting/setting",
     "pages/search/search",
     "pages/canvas/canvas",
-    "pages/diary/diary"
+    "pages/diary/diary",
+    "pages/about/about",
+    "pages/catelogsetting/catelogsetting",
+    "pages/addcatalog/addcatalog",
+    "pages/profile/profile"
   ], 
   "tabBar": {
     "color": "#a9b7b7",
@@ -54,5 +58,8 @@
     "navigationBarTextStyle":"white"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  }
 }

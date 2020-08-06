@@ -1,0 +1,17 @@
+<!--pages/catelogsetting/catelogsetting.wxml-->
+<view class='container'>
+<view class="page-body">
+    <view class="head">
+          <text class="text-span {{current === 0 ? 'selectTab' : ''}}" bindtap="handleTabChange">收入</text>
+          <text  class="text-span {{current !== 0 ? 'selectTab' : ''}}" bindtap="handleTabChange">支出</text>
+    </view>
+    <view class="weui-cells">
+          <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slideButtonTap">
+              <mp-cell value="左滑可以删除" footer="说明文字"></mp-cell>
+          </mp-slideview>
+      </view>
+    <view class='add-catalog' bindtap='addCatalog'>
+      添加类别
+    </view>
+  </view>
+</view>

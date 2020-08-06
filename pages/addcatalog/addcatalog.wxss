@@ -1,0 +1,12 @@
+/* pages/addcatalog/addcatalog.wxss */
+.container{
+  padding: 0;
+}
+.page-body {
+  width: 100%;
+}
+.save-btn {
+  width: 100% !important;
+  background-color:#B22222;
+  color: white;
+}

@@ -1,2 +1,53 @@
 <!--pages/diary/diary.wxml-->
-<text>pages/diary/diary.wxml</text>
+<view class="container">
+   <view class="page-body">
+      <view class="head">
+        <text class="text-span {{current === 0 ? 'selectTab' : ''}}" bindtap="handleTabChange">收入</text>
+        <text  class="text-span {{current !== 0 ? 'selectTab' : ''}}" bindtap="handleTabChange">支出</text>
+      </view>
+      <!-- 这里用循环遍历就可以了 -->
+      <view class="weui-flex tabBar">
+			  <view class="weui-flex__item">
+            <view class="placeholder">
+               <image style="width:30px; height:30px" src="../../images/canvas.png"></image>
+               <view>工资</view> 
+            </view>
+        </view>
+        <view class="weui-flex__item">
+            <view class="placeholder">
+              <image style="width:30px; height:30px" src="../../images/canvas.png"></image>
+               <view>兼职</view> 
+            </view>
+        </view>
+        <view class="weui-flex__item">
+            <view class="placeholder">
+               <image style="width:30px; height:30px" src="../../images/canvas.png"></image>
+               <view>礼金</view> 
+            </view>
+        </view>
+        <view class="weui-flex__item">
+            <view class="placeholder">
+              <image style="width:30px; height:30px" src="../../images/canvas.png"></image>
+               <view>奖金</view> 
+            </view>
+        </view>
+        <view class="weui-flex__item">
+            <view class="placeholder">
+               <image style="width:30px; height:30px" src="../../images/canvas.png"></image>
+               <view>其他</view> 
+            </view>
+        </view>
+		  </view>
+      <view class="content-box">
+        <view>日期: <picker  style="width:80%; display:inline-block; color:red" mode="date"  start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange">
+                  <view class="picker">
+                     {{data}}
+                  </view>
+               </picker></view>
+        <view><text>备注: </text><input placeholder="点我写备注" style="width:80%; display:inline-block"></input> </view>
+        <view><text>支出费用: </text><input placeholder="0" style="width:70%; display:inline-block"></input> </view>
+        <button class="login-btn" bindtap="handleConfirm">保存</button>
+      </view>
+  </view>
+</view>
+
