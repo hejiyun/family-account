@@ -1,0 +1,44 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<view class="container">
+   <view class="page-body">
+      <view class="head">收入</view>
+      <view class="weui-flex tabBar">
+			  <view class="weui-flex__item">
+            <view class="placeholder">
+               <image style="width:30px; height:30px" src="../../images/canvas.png"></image>
+               <view>工资</view> 
+            </view>
+        </view>
+        <view class="weui-flex__item">
+            <view class="placeholder">
+              <image style="width:30px; height:30px" src="../../images/canvas.png"></image>
+               <view>兼职</view> 
+            </view>
+        </view>
+        <view class="weui-flex__item">
+            <view class="placeholder">
+               <image style="width:30px; height:30px" src="../../images/canvas.png"></image>
+               <view>礼金</view> 
+            </view>
+        </view>
+        <view class="weui-flex__item">
+            <view class="placeholder">
+              <image style="width:30px; height:30px" src="../../images/canvas.png"></image>
+               <view>奖金</view> 
+            </view>
+        </view>
+        <view class="weui-flex__item">
+            <view class="placeholder">
+               <image style="width:30px; height:30px" src="../../images/canvas.png"></image>
+               <view>其他</view> 
+            </view>
+        </view>
+		  </view>
+      <view class="content-box">
+        <view>日期: 2019-05-12</view>
+        <view><text>备注: </text><input style="width:80%; display:inline-block"></input> </view>
+        <view>支出费用: 20</view>
+        <button class="login-btn" bindtap="handleConfirm">保存</button>
+      </view>
+  </view>
+</view>

@@ -1,0 +1,26 @@
+/* pages/orderDetail/orderDetail.wxss */
+.tabBar {
+  padding: 10px 20px;
+  font-size: 12px;
+}
+.head {
+  color: white ;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #B22222;
+}
+.container {
+  padding: 0;
+}
+.page-body {
+  width: 100%;
+}
+.content-box {
+  padding: 0 10px
+}
+.login-btn {
+  width: 100% !important;
+  background-color:#B22222;
+  color: white;
+}

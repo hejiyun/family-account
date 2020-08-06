@@ -1,7 +1,12 @@
 {
 	"description": "项目配置文件",
 	"packOptions": {
-		"ignore": []
+		"ignore": [
+			{
+				"type": "folder",
+				"value": "pic"
+			}
+		]
 	},
 	"setting": {
 		"urlCheck": false,
@@ -32,7 +37,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.12.0",
-	"appid": "wx8ad7e1475e51b47b",
+	"appid": "wxa6d0d31e7d19062d",
 	"projectname": "weixinApp",
 	"debugOptions": {
 		"hidedInDevtools": []

@@ -1,5 +1,82 @@
 <!--index.wxml-->
 <view class="container">
-   主页内容
-   <text bind:tap="Tologin">点击跳转登录页</text>
+   <view class="page-body">
+      <view class="weui-flex tabBar">
+			<view class="weui-flex__item">
+            <view class="placeholder">
+               {{year}}年
+                <picker mode="date" fields="month" start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange">
+                  <view class="picker">
+                     {{month + "月" + "▼"}}
+                  </view>
+               </picker>
+            </view>
+         </view>
+         <view class="weui-flex__item">
+            <view class="placeholder">
+               收入
+               <view>{{currentDetail.receive}}</view>
+            </view>
+         </view>
+         <view class="weui-flex__item">
+            <view class="placeholder">
+               支出
+               <view>{{currentDetail.pay}}</view>
+            </view>
+         </view>
+         <view class="weui-flex__item">
+            <view class="placeholder">
+               余额(当月)
+               <view>{{currentDetail.balance}}</view>
+            </view>
+         </view>
+		</view>
+      <scroll-view scroll-y="true" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+            <view id="{{item}}" class="scroll-view-item" wx:for="{{contentList}}" wx:key="item">
+            <view>{{item.Date + " " + item.weekDate}}<text style="float:right">支出:{{item.pay}}$ 收入:{{item.receive}}$</text></view>
+            <view wx:if="{{item.list.length !== 0}}" class="list-box">
+               <view data-id="{{listItem.id}}" wx:for="{{item.list}}"  wx:key="listItem" wx:for-item="listItem"  class="border weui-flex" bind:tap="listTab" bind:longpress="longTab">
+                  <image class="list-image weui-flex__item" src="../../images/order1.png"></image>
+                  <view class="weui-flex__item">
+                     <text>{{listItem.type}}</text>
+                     <view>{{listItem.remark}}</view>
+                  </view>
+                  <view class="weui-flex__item text-right  list-{{listItem.pay ? 'green': 'red'}}">{{(listItem.pay ? "-" + listItem.pay : "+" + listItem.receive )}}$</view>
+               </view>
+            </view>
+            <view wx:else class="list-box">
+               <text>暂无数据</text>
+            </view>
+        </view>
+      </scroll-view>
+      <!-- <view class="content-list">
+        <view id="{{item}}" class="scroll-view-item" wx:for="{{contentList}}" wx:key="item">
+            <view>{{item.Date + " " + item.weekDate}}<text style="float:right">支出:{{item.pay}}$ 收入:{{item.receive}}$</text></view>
+            <view wx:if="{{item.list.length !== 0}}" class="list-box">
+               <view data-id="{{listItem.id}}" wx:for="{{item.list}}"  wx:key="listItem" wx:for-item="listItem"  class="border weui-flex" bind:tap="listTab">
+                  <image class="list-image weui-flex__item" src="../../images/order1.png"></image>
+                  <view class="weui-flex__item">
+                     <text>{{listItem.type}}</text>
+                     <view>{{listItem.remark}}</view>
+                  </view>
+                  <view class="weui-flex__item text-right  list-{{listItem.pay ? 'green': 'red'}}">{{(listItem.pay ? "-" + listItem.pay : "+" + listItem.receive )}}$</view>
+               </view>
+            </view>
+            <view wx:else class="list-box">
+               <text>暂无数据</text>
+            </view>
+        </view>
+      </view> -->
+      <view class="fadeIn" wx:if="{{iosDialog1}}">
+        <view class="weui-mask"></view>
+        <view class="weui-dialog">
+            <view class="weui-dialog__hd"><strong class="weui-dialog__title">警告</strong></view>
+            <view class="weui-dialog__bd">您确定要删除么?</view>
+            <view class="weui-dialog__ft">
+                <a class="weui-dialog__btn weui-dialog__btn_default" bindtap="close">取消</a>
+                <a class="weui-dialog__btn weui-dialog__btn_primary" bindtap="close">确认</a>
+            </view>
+        </view>
+    </view>
+     </view>
 </view>
